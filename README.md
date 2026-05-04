@@ -55,12 +55,22 @@ Dangerous commands (`rm -f`, `system prune -a`, etc.) are intercepted with a con
 
 ## 📦 Installation
 
-```bash
-# From the project root
-pi install container-dashboard/
+### From npm (recommended)
 
-# Or manually load
-pi -e ./container-dashboard/index.ts
+```bash
+pi install npm:container-dashboard
+```
+
+### From GitHub
+
+```bash
+pi install git:github.com/k1lgor/pi-container-dashboard
+```
+
+### Or load locally
+
+```bash
+pi -e ./path/to/index.ts
 ```
 
 The extension auto-detects `docker` → `podman` → `nerdctl` at startup.
