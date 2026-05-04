@@ -1,0 +1,54 @@
+{
+  "name": "container-dashboard",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A pi coding agent extension for managing Docker, Podman, and Nerdctl containers — list, logs, prune, stats, inspect, and more.",
+  "keywords": [
+    "pi",
+    "pi-extension",
+    "docker",
+    "podman",
+    "nerdctl",
+    "containers",
+    "devops",
+    "container-management"
+  ],
+  "license": "MIT",
+  "author": "k1lgor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k1lgor/pi-container-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/k1lgor/pi-container-dashboard/issues"
+  },
+  "homepage": "https://github.com/k1lgor/pi-container-dashboard",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build && npm run test:types",
+    "test:types": "tsc --noEmit --strict --skipLibCheck"
+  },
+  "pi": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": ">=0.70.6"
+  },
+  "dependencies": {
+    "typebox": "^1.1.37"
+  },
+  "devDependencies": {
+    "@mariozechner/pi-coding-agent": "^0.70.6",
+    "typescript": "^5.0.0"
+  }
+}
